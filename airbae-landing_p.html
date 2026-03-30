@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirBae – Quit Smoking & Vaping. For Good.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:       #F5F0E6;
+  --cream2:      #EDE7DB;
+  --cream3:      #E4DDD0;
+  --blue-card:   #C5D9EA;
+  --yellow-card: #F2E4C0;
+  --peach-card:  #EDD0C2;
+  --orange:      #E07830;
+  --orange-dim:  #BF6020;
+  --orange-pale: rgba(224,120,48,0.1);
+  --card-bg:     #FFFFFF;
+  --border:      rgba(90,65,40,0.13);
+  --border-mid:  rgba(90,65,40,0.22);
+  --border-acc:  rgba(224,120,48,0.4);
+  --text:        #221608;
+  --text-2:      #6B5840;
+  --text-3:      #A89070;
+  --red:         #B85050;
+  --blue:        #4A7E96;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 4rem;
+  background: rgba(245,240,230,0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.35rem;
+  color: var(--orange); letter-spacing: -0.02em; text-decoration: none;
+}
+.logo span { color: var(--text); }
+nav ul { display: flex; gap: 2.5rem; list-style: none; }
+nav ul a {
+  color: var(--text-2); text-decoration: none; font-size: 0.88rem;
+  font-weight: 400; transition: color 0.2s;
+}
+nav ul a:hover { color: var(--orange); }
+.nav-cta {
+  background: var(--orange); color: #fff !important;
+  padding: 0.5rem 1.35rem; border-radius: 100px;
+  font-weight: 500 !important; transition: opacity 0.2s !important;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+/* SHARED */
+section { padding: 6rem 2rem; }
+.container { max-width: 1080px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 0.85rem;
+}
+.section-title {
+  font-family: 'Syne', sans-serif; font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1.1rem;
+}
+.section-body {
+  color: var(--text-2); font-size: 1rem; max-width: 540px;
+  line-height: 1.75; font-weight: 300;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 8rem 2rem 5rem; position: relative; text-align: center; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 700px 500px at 50% 35%, rgba(224,120,48,0.07) 0%, transparent 68%),
+    radial-gradient(ellipse 500px 400px at 15% 85%, rgba(197,217,234,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 400px 350px at 85% 15%, rgba(242,228,192,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 350px 300px at 80% 80%, rgba(237,208,194,0.45) 0%, transparent 60%);
+}
+.hero-badge {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--orange-pale); border: 1px solid var(--border-acc);
+  border-radius: 100px; padding: 0.38rem 1rem;
+  font-size: 0.75rem; color: var(--orange); font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.75rem;
+}
+.badge-dot {
+  width: 6px; height: 6px; background: var(--orange);
+  border-radius: 50%; animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+.hero h1 {
+  position: relative; z-index: 1;
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+  line-height: 1.05; letter-spacing: -0.03em;
+  max-width: 860px; margin-bottom: 1.4rem; color: var(--text);
+}
+.hero h1 em {
+  font-style: normal; color: var(--orange); position: relative;
+}
+.hero h1 em::after {
+  content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--orange), transparent);
+  border-radius: 2px;
+}
+.hero-sub {
+  position: relative; z-index: 1; font-size: 1.1rem; color: var(--text-2);
+  max-width: 540px; margin-bottom: 2.75rem; font-weight: 300; line-height: 1.75;
+}
+.hero-actions {
+  position: relative; z-index: 1;
+  display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--orange); color: #fff; border: none; cursor: pointer;
+  padding: 0.85rem 2rem; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.98rem; font-weight: 500;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+.btn-outline {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--border-mid); cursor: pointer;
+  padding: 0.85rem 2rem; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.98rem; font-weight: 400;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+.hero-stats {
+  position: relative; z-index: 1;
+  display: flex; gap: 3rem; justify-content: center;
+  margin-top: 4.5rem; padding-top: 2.75rem;
+  border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-family: 'Syne', sans-serif; font-size: 1.85rem; font-weight: 800;
+  color: var(--orange); line-height: 1; display: block; margin-bottom: 0.35rem;
+}
+.hero-stat .lbl { font-size: 0.78rem; color: var(--text-2); letter-spacing: 0.02em; }
+
+/* WAITLIST */
+#waitlist { background: var(--yellow-card); }
+.waitlist-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.kit-embed-wrap {
+  background: var(--card-bg); border-radius: 20px;
+  border: 1px solid var(--border); padding: 2.5rem;
+}
+.kit-embed-wrap input[type="email"],
+.kit-embed-wrap input[type="text"] {
+  border-radius: 100px !important; border: 1px solid var(--border-mid) !important;
+  font-family: 'DM Sans', sans-serif !important; padding: 0.75rem 1.25rem !important;
+  font-size: 0.95rem !important; width: 100% !important; margin-bottom: 0.75rem !important;
+  background: var(--cream) !important; color: var(--text) !important;
+  outline: none !important;
+}
+.kit-embed-wrap button[type="submit"],
+.kit-embed-wrap input[type="submit"] {
+  background: var(--orange) !important; color: #fff !important;
+  border: none !important; border-radius: 100px !important;
+  font-family: 'DM Sans', sans-serif !important; font-size: 0.98rem !important;
+  font-weight: 500 !important; padding: 0.85rem 2rem !important;
+  cursor: pointer !important; width: 100% !important;
+}
+/* placeholder form shown until Kit snippet is added */
+.placeholder-form input {
+  width: 100%; padding: 0.75rem 1.25rem; border-radius: 100px;
+  border: 1px solid var(--border-mid); font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem; background: var(--cream); color: var(--text);
+  display: block; margin-bottom: 0.75rem; outline: none;
+}
+.placeholder-form button {
+  width: 100%; background: var(--orange); color: #fff; border: none;
+  border-radius: 100px; padding: 0.85rem 2rem;
+  font-family: 'DM Sans', sans-serif; font-size: 0.98rem; font-weight: 500; cursor: pointer;
+}
+
+/* PROBLEM */
+#problem { background: var(--cream2); }
+.problem-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  align-items: center; margin-top: 3.5rem;
+}
+.stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.stat-card { background: var(--blue-card); border-radius: 18px; padding: 1.5rem; }
+.stat-card.warm  { background: var(--peach-card); }
+.stat-card.gold  { background: var(--yellow-card); }
+.stat-card.wide  { grid-column: 1/-1; background: var(--cream3); }
+.stat-card .big {
+  font-family: 'Syne', sans-serif; font-size: 2.1rem; font-weight: 800;
+  line-height: 1; margin-bottom: 0.45rem; color: var(--blue);
+}
+.stat-card.warm .big { color: var(--red); }
+.stat-card.gold .big { color: var(--orange-dim); }
+.stat-card.wide .big { font-size: 1.05rem; font-weight: 400; color: var(--text-2); }
+.stat-card p { font-size: 0.84rem; color: var(--text-2); line-height: 1.55; font-weight: 300; }
+
+/* SOLUTION */
+#solution { background: var(--cream); }
+.features-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.1rem; margin-top: 3.5rem;
+}
+.feature-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
+  padding: 1.75rem; transition: border-color 0.25s, transform 0.25s;
+}
+.feature-card:hover { border-color: var(--border-acc); transform: translateY(-3px); }
+.feature-icon {
+  width: 46px; height: 46px; background: var(--orange-pale); border: 1px solid var(--border-acc);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; margin-bottom: 1.1rem;
+}
+.feature-card h3 {
+  font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600;
+  margin-bottom: 0.5rem; color: var(--text);
+}
+.feature-card p { font-size: 0.87rem; color: var(--text-2); line-height: 1.65; font-weight: 300; }
+
+/* TRACTION */
+#traction { background: var(--peach-card); }
+.traction-wrap {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  align-items: center; margin-top: 3.5rem;
+}
+.traction-list { list-style: none; }
+.traction-list li {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.1rem 0; border-bottom: 1px solid var(--border);
+}
+.traction-list li:last-child { border-bottom: none; }
+.traction-dot {
+  width: 7px; height: 7px; flex-shrink: 0; background: var(--orange);
+  border-radius: 50%; margin-top: 0.55rem;
+}
+.traction-list strong {
+  font-family: 'Syne', sans-serif; display: block; font-size: 0.97rem;
+  font-weight: 600; color: var(--text); margin-bottom: 0.15rem;
+}
+.traction-list span { font-size: 0.85rem; color: var(--text-2); font-weight: 300; }
+.phone-mock {
+  background: var(--card-bg); border: 1.5px solid var(--border-acc);
+  border-radius: 34px; padding: 2.25rem 1.75rem; max-width: 268px; margin: 0 auto;
+}
+.phone-notch {
+  width: 72px; height: 5px; background: var(--border-mid);
+  border-radius: 3px; margin: 0 auto 1.75rem;
+}
+.day-count {
+  font-family: 'Syne', sans-serif; font-size: 3.2rem; font-weight: 800;
+  color: var(--orange); line-height: 1; text-align: center; margin-bottom: 0.25rem;
+}
+.day-label {
+  text-align: center; font-size: 0.75rem; color: var(--text-2);
+  margin-bottom: 1.6rem; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.phone-bar-wrap { margin-bottom: 1.1rem; }
+.phone-bar-label {
+  display: flex; justify-content: space-between; font-size: 0.73rem; color: var(--text-2); margin-bottom: 0.35rem;
+}
+.phone-bar-label span:last-child { color: var(--orange); font-weight: 500; }
+.phone-bar { height: 5px; background: var(--cream2); border-radius: 3px; overflow: hidden; }
+.phone-bar-fill {
+  height: 100%; background: linear-gradient(90deg, var(--orange-dim), var(--orange));
+  border-radius: 3px; animation: grow 1.8s ease forwards;
+}
+@keyframes grow { from { width: 0; } }
+.phone-achievement {
+  background: var(--yellow-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 0.7rem 0.9rem;
+  display: flex; align-items: center; gap: 0.7rem; margin-top: 1.1rem;
+}
+.ach-icon {
+  font-size: 1.1rem; width: 30px; height: 30px; background: var(--orange-pale);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.ach-text strong { font-size: 0.78rem; font-weight: 600; color: var(--orange-dim); display: block; }
+.ach-text span   { font-size: 0.7rem; color: var(--text-2); }
+
+/* MARKET */
+#market { background: var(--blue-card); }
+.market-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.1rem; margin-top: 3.5rem;
+}
+.market-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 20px; padding: 2rem; text-align: center;
+}
+.market-card .m-size {
+  font-family: 'Syne', sans-serif; font-size: 2.6rem; font-weight: 800;
+  color: var(--blue); line-height: 1; margin-bottom: 0.3rem;
+}
+.market-card .m-label {
+  font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--text-2); margin-bottom: 0.7rem;
+}
+.market-card .m-desc { font-size: 0.85rem; color: var(--text-3); font-weight: 300; line-height: 1.6; }
+
+/* MODEL */
+#model { background: var(--cream); }
+.model-grid {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 1.1rem; margin-top: 3.5rem;
+}
+.model-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
+  padding: 2rem; display: flex; gap: 1.1rem; align-items: flex-start;
+}
+.model-num {
+  font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800;
+  color: var(--border-mid); line-height: 1; flex-shrink: 0; width: 2rem;
+}
+.model-card h3 {
+  font-family: 'Syne', sans-serif; font-size: 0.97rem; font-weight: 600;
+  color: var(--orange-dim); margin-bottom: 0.35rem;
+}
+.model-card p { font-size: 0.86rem; color: var(--text-2); line-height: 1.65; font-weight: 300; }
+
+/* TEAM */
+#team { background: var(--cream2); }
+.team-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 3.5rem; }
+.team-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
+  padding: 2rem; flex: 1; min-width: 210px; text-align: center; transition: border-color 0.25s;
+}
+.team-card:hover { border-color: var(--border-acc); }
+.avatar {
+  width: 68px; height: 68px; border-radius: 50%; background: var(--orange-pale);
+  border: 2px solid var(--border-acc); display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700;
+  color: var(--orange); margin: 0 auto 1rem;
+}
+.team-card h3 {
+  font-family: 'Syne', sans-serif; font-size: 0.97rem; font-weight: 600; margin-bottom: 0.22rem;
+}
+.team-card .role { font-size: 0.8rem; color: var(--orange); margin-bottom: 0.5rem; }
+.team-card p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; font-weight: 300; }
+
+/* FUNDING */
+#funding { background: var(--cream); position: relative; overflow: hidden; }
+.funding-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 800px 450px at 50% 50%, rgba(224,120,48,0.06) 0%, transparent 70%);
+}
+.funding-inner {
+  position: relative; z-index: 1; background: var(--card-bg);
+  border: 1px solid var(--border-acc); border-radius: 24px; padding: 3.5rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem;
+}
+.ask-amount {
+  font-family: 'Syne', sans-serif; font-size: 3.8rem; font-weight: 800;
+  color: var(--orange); line-height: 1; margin-bottom: 0.4rem;
+}
+.ask-round {
+  font-size: 0.78rem; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--text-2); margin-bottom: 2rem;
+}
+.use-list { list-style: none; }
+.use-list li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.85rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem;
+}
+.use-list li:last-child { border-bottom: none; }
+.use-label { color: var(--text-2); font-weight: 300; }
+.use-pct { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--orange); }
+.funding-contact { margin-top: 1.75rem; font-size: 0.88rem; color: var(--text-2); }
+.funding-contact a { color: var(--orange); text-decoration: none; font-weight: 500; }
+
+/* FOOTER */
+footer {
+  background: var(--cream3); border-top: 1px solid var(--border);
+  padding: 2.75rem 2rem; text-align: center;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem;
+  color: var(--orange); margin-bottom: 0.6rem;
+}
+footer p { font-size: 0.83rem; color: var(--text-3); }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  nav { padding: 1rem 1.5rem; }
+  nav ul { display: none; }
+  .problem-grid, .traction-wrap, .waitlist-inner, .funding-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .features-grid, .market-grid, .model-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.6rem; }
+  .funding-inner { padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Air<span>Bae</span></a>
+  <ul>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#traction">Traction</a></li>
+    <li><a href="#market">Market</a></li>
+    <li><a href="#waitlist">Join Waitlist</a></li>
+    <li><a href="mailto:airbaeapp@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-badge"><div class="badge-dot"></div>Now in Beta · iOS TestFlight</div>
+  <h1>Quit Smoking &amp; Vaping.<br><em>For Good.</em></h1>
+  <p class="hero-sub">AirBae is the holistic quit companion built for the 1.38 billion people who deserve a better life — combining behavioral science, real-time tracking, and compassionate support.</p>
+  <div class="hero-actions">
+    <a href="https://testflight.apple.com/join/13z4fKyD" class="btn-primary">Try Beta on iOS →</a>
+    <a href="#waitlist" class="btn-outline">Join the Waitlist</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="num">1.38B</span><span class="lbl">Smokers worldwide</span></div>
+    <div class="hero-stat"><span class="num">82M</span><span class="lbl">Vapers globally</span></div>
+    <div class="hero-stat"><span class="num">$22B+</span><span class="lbl">Cessation market</span></div>
+    <div class="hero-stat"><span class="num">&lt;5%</span><span class="lbl">Quit success unaided</span></div>
+  </div>
+</section>
+
+<!-- WAITLIST — Kit embed -->
+<section id="waitlist">
+  <div class="container">
+    <div class="waitlist-inner">
+      <div>
+        <p class="section-label">Join the Movement</p>
+        <h2 class="section-title">Be first.<br>Change your life.</h2>
+        <p class="section-body">Join thousands of people waiting to quit smoking and vaping for good. Get early access, beta updates, and tips straight to your inbox.</p>
+        <p style="margin-top:1.5rem; font-size:0.82rem; color:var(--text-3);">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+      <div class="kit-embed-wrap">
+
+        <!--
+        ════════════════════════════════════════════
+         PASTE YOUR KIT EMBED SNIPPET HERE
+        ════════════════════════════════════════════
+         1. Kit dashboard → Landing Pages & Forms
+         2. Open your form → Embed → Inline
+         3. Copy the <script> tag, paste it below
+            (delete the placeholder form below too)
+
+         Looks like:
+         <script async data-uid="XXXXXXXX"
+           src="https://yourname.kit.com/XXXXXXXX/index.js">
+         </script>
+        ════════════════════════════════════════════
+        -->
+
+        <!-- PLACEHOLDER — delete once Kit snippet is added -->
+        <p style="font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:600; color:var(--text); margin-bottom:0.4rem;">Join the Waiting List</p>
+        <p style="font-size:0.82rem; color:var(--text-2); margin-bottom:1.5rem;">Early access + quit tips in your inbox</p>
+        <div class="placeholder-form">
+          <input type="text" placeholder="First name">
+          <input type="email" placeholder="Email address">
+          <button type="button">Notify Me →</button>
+        </div>
+        <!-- END PLACEHOLDER -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div>
+        <p class="section-label">The Problem</p>
+        <h2 class="section-title">The current tools are failing millions.</h2>
+        <p class="section-body">Existing cessation apps treat addiction as a willpower problem — they count cigarettes and show timers. But addiction is neurological, emotional, and social. Without addressing all three, relapse is inevitable.</p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card warm">
+          <div class="big">8M+</div>
+          <p>people die every year from tobacco-related disease — one every 4 seconds</p>
+        </div>
+        <div class="stat-card">
+          <div class="big">70%</div>
+          <p>of smokers want to quit, but fewer than 1 in 10 succeed without structured support</p>
+        </div>
+        <div class="stat-card gold">
+          <div class="big">$1.4T</div>
+          <p>annual global economic cost from tobacco, including healthcare and lost productivity</p>
+        </div>
+        <div class="stat-card wide">
+          <div class="big">Current apps count cigarettes. We change lives.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="container">
+    <p class="section-label">Our Solution</p>
+    <h2 class="section-title">A quit companion that treats the whole person.</h2>
+    <p class="section-body">AirBae uses a three-pillar approach grounded in behavioral science — your lungs, your mind, and your whole healthy life.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🫁</div>
+        <h3>Body Recovery Tracking</h3>
+        <p>Visualize physical healing in real time. Lung capacity, circulation, heart rate — milestones that make progress feel real.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>AI Craving Coach</h3>
+        <p>Personalized CBT techniques, breathing exercises, and distraction strategies delivered exactly when cravings strike.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🫀</div>
+        <h3>Emotional & Habit Support</h3>
+        <p>Mood journaling, trigger identification, and streak rewards that replace addiction loops with positive ones.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Progress Dashboard</h3>
+        <p>Money saved, health recovered, days clean — data that reinforces identity as a non-smoker.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Community & Accountability</h3>
+        <p>Peer support, anonymous sharing, and human volunteer mentors for those who need a real voice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3>Scientifically Grounded</h3>
+        <p>Every feature is built on peer-reviewed research in addiction medicine, behavioral psychology, and habit formation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACTION -->
+<section id="traction">
+  <div class="container">
+    <div class="traction-wrap">
+      <div>
+        <p class="section-label">Traction</p>
+        <h2 class="section-title">Early momentum, real users, real feedback.</h2>
+        <ul class="traction-list">
+          <li><div class="traction-dot"></div><div><strong>Live on iOS TestFlight</strong><span>Beta app shipping to real users, collecting engagement and retention data now</span></div></li>
+          <li><div class="traction-dot"></div><div><strong>Waitlist building</strong><span>Organic sign-ups via TikTok, Instagram, and LinkedIn — community growing daily</span></div></li>
+          <li><div class="traction-dot"></div><div><strong>Volunteer community forming</strong><span>People reaching out to support the mission as mentors and beta testers</span></div></li>
+          <li><div class="traction-dot"></div><div><strong>Three-pillar feature set complete</strong><span>Body, mind, life — fully designed and shipping in beta</span></div></li>
+          <li><div class="traction-dot"></div><div><strong>Mission-driven differentiation</strong><span>Positioned as a movement, resonating strongly with Gen Z and millennial vapers</span></div></li>
+        </ul>
+      </div>
+      <div>
+        <div class="phone-mock">
+          <div class="phone-notch"></div>
+          <div class="day-count">14</div>
+          <div class="day-label">Days smoke-free</div>
+          <div class="phone-bar-wrap">
+            <div class="phone-bar-label"><span>Lung capacity</span><span>+12%</span></div>
+            <div class="phone-bar"><div class="phone-bar-fill" style="width:62%"></div></div>
+          </div>
+          <div class="phone-bar-wrap">
+            <div class="phone-bar-label"><span>Money saved</span><span>€84</span></div>
+            <div class="phone-bar"><div class="phone-bar-fill" style="width:48%; animation-delay:0.3s"></div></div>
+          </div>
+          <div class="phone-bar-wrap">
+            <div class="phone-bar-label"><span>Cravings resisted</span><span>31</span></div>
+            <div class="phone-bar"><div class="phone-bar-fill" style="width:78%; animation-delay:0.6s"></div></div>
+          </div>
+          <div class="phone-achievement">
+            <div class="ach-icon">🏆</div>
+            <div class="ach-text"><strong>2 Weeks Strong!</strong><span>Blood oxygen normalising</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section id="market">
+  <div class="container">
+    <p class="section-label">Market Opportunity</p>
+    <h2 class="section-title">A massive, underserved, global market.</h2>
+    <p class="section-body">The cessation market is growing rapidly as governments, insurers, and employers seek cost-effective solutions. Digital health is the fastest-growing delivery channel.</p>
+    <div class="market-grid">
+      <div class="market-card">
+        <div class="m-size">$22B</div>
+        <div class="m-label">TAM — Total Addressable Market</div>
+        <div class="m-desc">Global cessation market growing at 16% CAGR through 2030 as vaping bans and health awareness accelerate demand</div>
+      </div>
+      <div class="market-card">
+        <div class="m-size">$8B</div>
+        <div class="m-label">SAM — Digital Health Apps</div>
+        <div class="m-desc">Digital-first solutions targeting smartphone-native users across Europe, North America, and APAC</div>
+      </div>
+      <div class="market-card">
+        <div class="m-size">$400M</div>
+        <div class="m-label">SOM — 5-Year Target</div>
+        <div class="m-desc">European youth vapers and Gen Z smokers — underserved by legacy apps, hyper-responsive to mobile-first experiences</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL -->
+<section id="model">
+  <div class="container">
+    <p class="section-label">Business Model</p>
+    <h2 class="section-title">Multiple revenue streams, built to scale.</h2>
+    <p class="section-body">Freemium at the core — with high-intent premium conversions, enterprise B2B, and a data platform that creates durable competitive moat.</p>
+    <div class="model-grid">
+      <div class="model-card"><div class="model-num">01</div><div><h3>Premium Subscription</h3><p>Free core app with premium tier unlocking advanced AI coaching, personalized quit plans, and health analytics. Target: €9.99/month.</p></div></div>
+      <div class="model-card"><div class="model-num">02</div><div><h3>B2B — Employer & Insurer</h3><p>White-label licensing for health insurers, corporate wellness programs, and national health services seeking to cut tobacco costs at scale.</p></div></div>
+      <div class="model-card"><div class="model-num">03</div><div><h3>Anonymised Health Insights</h3><p>Aggregate, privacy-compliant behavioral data sold to pharmaceutical companies, researchers, and public health bodies.</p></div></div>
+      <div class="model-card"><div class="model-num">04</div><div><h3>Telehealth & NRT Partnerships</h3><p>Affiliate revenue from NRT brands, online pharmacies, and telehealth providers offering prescription cessation support.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <p class="section-label">The Team</p>
+    <h2 class="section-title">Mission-obsessed builders.</h2>
+    <p class="section-body">AirBae was born from a deep belief that addiction deserves better tools. We're looking for advisors, partners, and investors who share that conviction.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="avatar">AB</div>
+        <h3>AirBae Team</h3>
+        <div class="role">Founders & Builders</div>
+        <p>A cross-functional founding team combining product design, behavioral science, and mobile engineering — united by a shared mission.</p>
+      </div>
+      <div class="team-card" style="border-style:dashed;">
+        <div class="avatar" style="border-style:dashed; color:var(--text-3);">?</div>
+        <h3>Medical Advisor</h3>
+        <div class="role" style="color:var(--text-3)">Seeking</div>
+        <p>Building our advisory board. Expertise in addiction medicine or digital therapeutics? We'd love to connect.</p>
+      </div>
+      <div class="team-card" style="border-style:dashed;">
+        <div class="avatar" style="border-style:dashed; color:var(--text-3);">?</div>
+        <h3>Lead Investor</h3>
+        <div class="role" style="color:var(--text-3)">Open Round</div>
+        <p>Raising pre-seed to accelerate product, grow users, and build the team behind this mission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDING -->
+<section id="funding">
+  <div class="container">
+    <div class="funding-glow"></div>
+    <p class="section-label">Investment</p>
+    <h2 class="section-title">Join the movement.</h2>
+    <div class="funding-inner">
+      <div>
+        <div class="ask-amount">€250K</div>
+        <div class="ask-round">Pre-Seed Round — Open Now</div>
+        <ul class="use-list">
+          <li><span class="use-label">Product & Engineering</span><span class="use-pct">40%</span></li>
+          <li><span class="use-label">Growth & User Acquisition</span><span class="use-pct">25%</span></li>
+          <li><span class="use-label">Clinical Validation & Research</span><span class="use-pct">20%</span></li>
+          <li><span class="use-label">Team & Operations</span><span class="use-pct">15%</span></li>
+        </ul>
+        <div class="funding-contact">Ready to talk? <a href="mailto:airbaeapp@gmail.com">airbaeapp@gmail.com</a></div>
+      </div>
+      <div>
+        <h3 style="font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:600; margin-bottom:1.25rem;">Why invest in AirBae?</h3>
+        <ul class="traction-list">
+          <li><div class="traction-dot"></div><div><strong>Massive, urgent problem</strong><span>1.38B smokers, 8M deaths/year — one of the most important health challenges of our time</span></div></li>
+          <li><div class="traction-dot"></div><div><strong>Differentiated product</strong><span>Holistic three-pillar approach backed by behavioral science — not just another tracker</span></div></li>
+          <li><div class="traction-dot"></div><div><strong>Early validation</strong><span>Live iOS beta, organic community growth, real user feedback — a product, not a pitch deck</span></div></li>
+          <li><div class="traction-dot"></div><div><strong>Scalable B2B upside</strong><span>Enterprise and insurer channel creates high-margin recurring revenue</span></div></li>
+        </ul>
+        <a href="mailto:airbaeapp@gmail.com" class="btn-primary" style="margin-top:2rem; display:inline-flex;">Request Pitch Deck →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">AirBae</div>
+  <p style="margin-bottom:0.45rem; color:var(--text-2); font-size:0.88rem;">For your lungs, your mind, and your healthy life.</p>
+  <p>© 2025 AirBae ·
+    <a href="mailto:airbaeapp@gmail.com" style="color:var(--orange); text-decoration:none;">airbaeapp@gmail.com</a> ·
+    <a href="https://www.linkedin.com/company/airbaeapp/" style="color:var(--text-3); text-decoration:none; margin:0 0.4rem;">LinkedIn</a>
+    <a href="https://www.tiktok.com/@airbae_app" style="color:var(--text-3); text-decoration:none; margin:0 0.4rem;">TikTok</a>
+    <a href="https://www.instagram.com/airbae_app/" style="color:var(--text-3); text-decoration:none; margin:0 0.4rem;">Instagram</a>
+  </p>
+</footer>
+
+</body>
+</html>
