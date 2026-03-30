@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imprint – AirBae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #F5F0E6; --cream2: #EDE7DB; --cream3: #E4DDD0;
+  --orange: #E07830; --orange-dim: #BF6020;
+  --card-bg: #FFFFFF; --border: rgba(90,65,40,0.13); --border-mid: rgba(90,65,40,0.22);
+  --text: #221608; --text-2: #6B5840; --text-3: #A89070;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 4rem; background: rgba(245,240,230,0.95);
+  border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+}
+.logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.35rem; color: var(--orange); text-decoration: none; letter-spacing: -0.02em; }
+.logo span { color: var(--text); }
+.back-link { font-size: 0.88rem; color: var(--text-2); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+.back-link:hover { color: var(--orange); }
+main { max-width: 760px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+.page-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.85rem; }
+h1 { font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-bottom: 1.5rem; }
+h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--orange-dim); margin-bottom: 0.75rem; }
+p { font-size: 0.95rem; color: var(--text-2); font-weight: 300; margin-bottom: 0.6rem; }
+p:last-child { margin-bottom: 0; }
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+footer { text-align: center; padding: 2rem; font-size: 0.78rem; color: var(--text-3); border-top: 1px solid var(--border); background: var(--cream3); }
+@media (max-width: 600px) { nav { padding: 1rem 1.5rem; } h1 { font-size: 1.8rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Air<span>Bae</span></a>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<main>
+  <p class="page-label">Legal</p>
+  <h1>Imprint</h1>
+
+  <div class="card">
+    <h2>Information according to § 5 TMG</h2>
+    <p><strong>AirBae</strong></p>
+    <p>[Your Full Name]</p>
+    <p>[Street Address]</p>
+    <p>[Postcode, City]</p>
+    <p>[Country]</p>
+  </div>
+
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:airbaeapp@gmail.com">airbaeapp@gmail.com</a></p>
+    <p>Website: <a href="https://airbae.eu">airbae.eu</a></p>
+  </div>
+
+  <div class="card">
+    <h2>Responsible for Content</h2>
+    <p>[Your Full Name]</p>
+    <p>[Address as above]</p>
+  </div>
+
+  <div class="card">
+    <h2>Dispute Resolution</h2>
+    <p>The European Commission provides a platform for online dispute resolution (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
+    <p>We are not obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+  </div>
+
+  <div class="card">
+    <h2>Disclaimer</h2>
+    <p>AirBae is a behavioral support tool designed to complement your quit journey. It does not constitute medical advice, diagnosis, or treatment. If you have health concerns related to smoking or vaping, please consult a qualified healthcare professional.</p>
+  </div>
+</main>
+
+<footer>© 2025 AirBae. All rights reserved.</footer>
+
+</body>
+</html>
